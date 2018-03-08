@@ -22,10 +22,18 @@ export default class App extends React.Component {
             </Card>
         );
     };
+
+    stopRenderCard = () => {
+        return <Text>There's no more content here!</Text>;
+    };
     render() {
         return (
             <View style={styles.container}>
-                <CardDeck data={DATA} renderCard={this.renderCard} />
+                <CardDeck
+                    data={DATA}
+                    stopRenderCard={this.stopRenderCard}
+                    renderCard={this.renderCard}
+                />
             </View>
         );
     }
